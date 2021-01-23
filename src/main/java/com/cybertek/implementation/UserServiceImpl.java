@@ -21,8 +21,7 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-    UserRepository userRepository;
-
+    private UserRepository userRepository;
     private ProjectService projectService;
     private TaskService taskService;
     private MapperUtil mapperUtil;
@@ -54,6 +53,7 @@ public class UserServiceImpl implements UserService {
     public void save(UserDTO dto) {
         User foundUser = userRepository.findByUserName(dto.getUserName());
         dto.setEnabled(true);
+
         User obj = mapperUtil.convert(dto, new User());
         obj.setPassWord(passwordEncoder.encode(obj.getPassWord()));
         userRepository.save(obj);
@@ -65,7 +65,11 @@ public class UserServiceImpl implements UserService {
         //find current user
         User user = userRepository.findByUserName(dto.getUserName());
         //map update user dto to entity object
-        User convertedUser = mapperUtil.convert(user,new User());
+        User convertedUser = mapperUtil.convert(dto,new User());
+
+        convertedUser.setPassWord(passwordEncoder.encode(convertedUser.getPassWord()));
+        convertedUser.setEnabled(true);
+
         //set id to the converted object
         convertedUser.setId(user.getId());
         //save updated user
