@@ -7,7 +7,8 @@ import org.hibernate.annotations.Where;
 import javax.persistence.*;
 
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "users")
 @Where(clause = "is_deleted=false")
@@ -16,7 +17,7 @@ public class User extends BaseEntity{
     private String firstName;
     private String lastName;
     private String userName;
-    private String password;
+    private String passWord;
     private boolean enabled;
     private String phone;
 

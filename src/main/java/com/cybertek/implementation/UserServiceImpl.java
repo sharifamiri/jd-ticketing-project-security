@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
         User foundUser = userRepository.findByUserName(dto.getUserName());
         dto.setEnabled(true);
         User obj = mapperUtil.convert(dto, new User());
-        obj.setPassword(passwordEncoder.encode(obj.getPassword()));
+        obj.setPassWord(passwordEncoder.encode(obj.getPassWord()));
         userRepository.save(obj);
     }
 

@@ -6,7 +6,8 @@ import java.util.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "roles")
 public class Role extends BaseEntity {

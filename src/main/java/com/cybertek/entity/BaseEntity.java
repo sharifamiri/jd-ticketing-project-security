@@ -6,7 +6,8 @@ import java.time.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 @MappedSuperclass
 public class BaseEntity {
 
