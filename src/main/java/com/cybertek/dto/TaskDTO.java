@@ -1,15 +1,14 @@
 package com.cybertek.dto;
 
 import com.cybertek.enums.Status;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @NoArgsConstructor
-@Data
+@Getter
+@Setter
 public class TaskDTO {
 
     private Long id;

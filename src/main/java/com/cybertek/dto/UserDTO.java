@@ -1,13 +1,12 @@
 package com.cybertek.dto;
 
 import com.cybertek.enums.Gender;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class UserDTO {
 
     private Long id;
@@ -15,7 +14,7 @@ public class UserDTO {
     private String lastName;
     private String userName;
     private String passWord;
-    private String confirmedPassword;
+    private String confirmPassword;
     private boolean enabled;
     private String phone;
     private RoleDTO role;
